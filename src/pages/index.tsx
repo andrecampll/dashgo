@@ -11,11 +11,11 @@ type SignInFormData = {
 };
 
 const signInFormSchema = yup.object().shape({
-  email: yup.string().required('E-mail obrigatório').email(),
+  email: yup.string().required('E-mail obrigatório').email('E-mail inválido'),
   password: yup
     .string()
     .min(6, 'Senha precisa ter no mínimo 6 caracteres')
-})
+});
 
 export default function SignIn() {
   const { register, handleSubmit, formState } = useForm({
