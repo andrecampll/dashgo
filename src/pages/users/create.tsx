@@ -2,6 +2,22 @@ import * as yup from 'yup';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
+import {
+  Box,
+  Button,
+  Divider,
+  Flex,
+  Heading,
+  SimpleGrid,
+  VStack,
+  HStack
+} from "@chakra-ui/react";
+import Link from "next/link";
+import { Input } from "../../components/Form/Input";
+
+import { Header } from "../../components/Header";
+import { Sidebar } from "../../components/Sidebar";
+
 type CreateUserFormData = {
   email: string;
   password: string;
@@ -18,22 +34,6 @@ const createUserFormSchema = yup.object().shape({
     null, yup.ref('password'),
   ], 'As senhas precisam ser iguais'),
 });
-
-import {
-  Box,
-  Button,
-  Divider,
-  Flex,
-  Heading,
-  SimpleGrid,
-  VStack,
-  HStack
-} from "@chakra-ui/react";
-import Link from "next/link";
-import { Input } from "../../components/Form/Input";
-
-import { Header } from "../../components/Header";
-import { Sidebar } from "../../components/Sidebar";
 
 export default function CreateUser() {
   const { register, handleSubmit, formState } = useForm({
