@@ -1,4 +1,4 @@
-import { Box, Stack, Text, Link, Icon } from "@chakra-ui/react";
+import { Stack } from "@chakra-ui/react";
 import { RiContactsLine, RiDashboardLine, RiGitMergeLine, RiInputMethodLine } from "react-icons/ri";
 
 import { NavSection } from "./NavSection";
