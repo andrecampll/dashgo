@@ -64,36 +64,40 @@ const series = [
 
 export default function Dashboard() {
   return (
-    <Flex direction="column" h="100vh">
-      <Header />
+    <>
+      <title>Dashgo</title>
 
-      <Flex w="100%" my="6" maxWidth={1480} mx="auto" px="6">
-        <Sidebar />
+      <Flex direction="column" h="100vh">
+        <Header />
 
-        <SimpleGrid flex="1" gap="4" minChildWidth="320px" align="flex-start">
-          <Box
-            p={["6", "8"]}
-            bg="gray.800"
-            borderRadius={8}
-            pb="4"
-          >
-            <Text fontSize="lg" mb="4">Inscritos da semana</Text>
+        <Flex w="100%" my="6" maxWidth={1480} mx="auto" px="6">
+          <Sidebar />
 
-            <Chart type="area" height={160} options={options} series={series} />
-          </Box>
+          <SimpleGrid flex="1" gap="4" minChildWidth="320px" align="flex-start">
+            <Box
+              p={["6", "8"]}
+              bg="gray.800"
+              borderRadius={8}
+              pb="4"
+            >
+              <Text fontSize="lg" mb="4">Inscritos da semana</Text>
 
-          <Box
-            p={["6", "8"]}
-            bg="gray.800"
-            borderRadius={8}
-            pb="4"
-          >
-            <Text fontSize="lg" mb="4">Taxa de abertura</Text>
+              <Chart type="area" height={160} options={options} series={series} />
+            </Box>
 
-            <Chart type="area" height={160} options={options} series={series} />
-          </Box>
-        </SimpleGrid>
+            <Box
+              p={["6", "8"]}
+              bg="gray.800"
+              borderRadius={8}
+              pb="4"
+            >
+              <Text fontSize="lg" mb="4">Taxa de abertura</Text>
+
+              <Chart type="area" height={160} options={options} series={series} />
+            </Box>
+          </SimpleGrid>
+        </Flex>
       </Flex>
-    </Flex>
+    </>
   )
 }
