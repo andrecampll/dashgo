@@ -1,5 +1,8 @@
 import { Box, Flex, SimpleGrid, Text, theme } from "@chakra-ui/react";
 import dynamic from 'next/dynamic';
+
+import { withSSRGuest } from "../utils/withSSRGuest";
+
 import { Header } from "../components/Header";
 import { Sidebar } from "../components/Sidebar";
 
@@ -101,3 +104,9 @@ export default function Dashboard() {
     </>
   )
 }
+
+export const getServerSideProps = withSSRGuest(async (ctx) => {
+  return {
+    props: {}
+  }
+});
