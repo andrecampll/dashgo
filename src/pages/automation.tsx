@@ -70,7 +70,7 @@ const series = [
 export default function Dashboard() {
   return (
     <>
-      <title>Dashgo</title>
+      <title>Dashgo | Automation</title>
 
       <Flex direction="column" h="100vh">
         <Header />
@@ -86,7 +86,7 @@ export default function Dashboard() {
                 borderRadius={8}
                 pb="4"
               >
-                <Text fontSize="lg" mb="4">Inscritos da semana</Text>
+                <Text fontSize="lg" mb="4">Métricas da semana</Text>
 
                 <Chart type="area" height={160} options={options} series={series} />
               </Box>
@@ -97,7 +97,7 @@ export default function Dashboard() {
                 borderRadius={8}
                 pb="4"
               >
-                <Text fontSize="lg" mb="4">Taxa de abertura</Text>
+                <Text fontSize="lg" mb="4">Métricas de abertura</Text>
 
                 <Chart type="area" height={160} options={options} series={series} />
               </Box>
@@ -117,4 +117,7 @@ export const getServerSideProps = withSSRAuth(async (ctx) => {
   return {
     props: {}
   }
+}, {
+  permissions: ['metrics.list'],
+  roles: ['administrator'],
 });

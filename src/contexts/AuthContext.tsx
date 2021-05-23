@@ -8,7 +8,7 @@ type User = {
   name: string;
   email: string;
   permissions: string[];
-  roles: string;
+  roles: string[];
 }
 
 type SignInCredentials = {
